@@ -1,0 +1,13 @@
+node_modules/
+.env*
+! .env.example
+storage/*.json
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.features-gen/
+allure-results/
+allure-report/
+logs/
+*.log
