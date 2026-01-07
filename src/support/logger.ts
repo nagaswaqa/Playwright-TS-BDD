@@ -22,4 +22,4 @@ configure({
     }
 });
 
-export const logger = getLogger('NextGenFEATS');
+export const logger = getLogger('nextgenfeats');

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POM Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="draggable-header">
+      <div class="drag-handle" title="Drag to move">⋮⋮</div>
+      <h1>POM Generator</h1>
+      <div class="header-actions">
+        <div id="statusMessage" class="status-message hidden">Generation Completed! ✅</div>
+        <button id="settingsBtn" title="Settings">⚙️</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="source-selector">
+        <label>
+          <input type="radio" name="source" value="tab" checked> Active Tab
+        </label>
+        <label>
+          <input type="radio" name="source" value="paste"> Paste DOM
+        </label>
+      </div>
+
+      <div id="pasteDomGroup" class="input-group hidden">
+        <label for="pastedDom">Raw HTML / DOM Snippet</label>
+        <textarea id="pastedDom" rows="4" placeholder="Paste <button>...</button> or <div>...</div>"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="languageSelect">Output Language</label>
+        <select id="languageSelect" class="full-width">
+          <option value="typescript">TypeScript (Playwright)</option>
+          <option value="java">Java (Playwright)</option>
+          <option value="python">Python (Playwright)</option>
+        </select>
+      </div>
+
+      <div id="settingsPanel" class="settings-panel hidden">
+        <div class="input-group">
+          <label for="aiProvider">AI Provider</label>
+          <select id="aiProvider">
+            <option value="openai">OpenAI (GPT-4o mini)</option>
+            <option value="anthropic">Anthropic (Claude 3 Haiku)</option>
+            <option value="local">Local LLM (OpenAI Compatible)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="apiKey">API Key</label>
+          <input type="password" id="apiKey" placeholder="sk-...">
+        </div>
+        <div class="input-group" id="baseUrlGroup" style="display: none;">
+          <label for="baseUrl">Base URL</label>
+          <input type="text" id="baseUrl" placeholder="http://localhost:11434/v1">
+        </div>
+        <button id="saveSettingsBtn" class="btn primary full-width">Save Settings</button>
+      </div>
+
+      <div class="input-group">
+        <label for="className">Page Class Name</label>
+        <input type="text" id="className" placeholder="e.g. LoginPage">
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" class="btn primary">
+          <span class="icon">⚡</span> Generate POM
+        </button>
+        <button id="aiBtn" class="btn primary">
+          <span class="icon">🤖</span> AI Agent
+        </button>
+        <button id="locatorsBtn" class="btn primary">
+          <span class="icon">🔍</span> Locators Only
+        </button>
+      </div>
+
+      <div class="result-area hidden" id="resultArea">
+        <div class="result-header">
+          <span>Generated Code</span>
+          <button id="copyBtn" class="btn small">Copy</button>
+        </div>
+        <pre id="outputCode"><code>// Click Generate...</code></pre>
+        <div id="outputTable" class="hidden"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Powered by NextGenFEATS</p>
+    </footer>
+
+    <!-- Resize Handles -->
+    <div class="resize-handle resize-top" data-direction="n"></div>
+    <div class="resize-handle resize-right" data-direction="e"></div>
+    <div class="resize-handle resize-bottom" data-direction="s"></div>
+    <div class="resize-handle resize-left" data-direction="w"></div>
+    <div class="resize-handle resize-top-left" data-direction="nw"></div>
+    <div class="resize-handle resize-top-right" data-direction="ne"></div>
+    <div class="resize-handle resize-bottom-left" data-direction="sw"></div>
+    <div class="resize-handle resize-bottom-right" data-direction="se"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
