@@ -19,10 +19,3 @@ Copy and paste the block below into your AI assistant:
 > 
 > Finally, update the **Critical System Nodes** in `AI_PROMPT_GUIDE.md` with the new step file."
 
----
-
-## 🛠️ Why this works
-- **Context Locking**: It references `AI_PROMPT_GUIDE.md` so the AI doesn't hallucinate non-framework patterns.
-- **Selector Precision**: Providing the IDs (`#tab-api`) ensures the test is stable from the start.
-- **Clean Code**: It enforces file separation (`api-demo.steps.ts`).
-- **Auto-Documentation**: It forces the agent to update your project map (Manifest) automatically.

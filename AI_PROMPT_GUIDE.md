@@ -1,6 +1,6 @@
 # AI Agent Framework Manifest (AI_AGENT_CONTEXT)
 
-This file provide comprehensive context to AI Agents (Antigravity, GitHub Copilot) regarding the Playwright-TS-BDD framework architecture, patterns, and component registry.
+This file provide comprehensive context to AI Agents regarding the Playwright-TS-BDD framework architecture, patterns, and component registry.
 
 > [!IMPORTANT]
 > **To the AI Agent**: Read this file entirely to understand how to contribute to this project without breaking framework patterns.

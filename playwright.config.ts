@@ -16,6 +16,7 @@ const bddDir = defineBddConfig({
 export const BROWSER_NAME = testConfig.browser;
 
 export default defineConfig({
+    timeout: process.env.PLAYWRIGHT_TIMEOUT ? parseInt(process.env.PLAYWRIGHT_TIMEOUT) : 90000,
     testDir: '.features-gen',
     testMatch: [
         /.*\.feature\.spec\.(ts|js)/,
