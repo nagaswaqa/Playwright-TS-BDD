@@ -24,6 +24,7 @@ npx playwright test
 | Capture and convert recordings | [`docs/AUTHORING/recording-workflow.md`](docs/AUTHORING/recording-workflow.md) |
 | Combine API and UI in one scenario | [`docs/AUTHORING/api-testing.md`](docs/AUTHORING/api-testing.md) |
 | Run security testing (passive ZAP scan) | [`docs/AUTHORING/security-testing.md`](docs/AUTHORING/security-testing.md) |
+| Understand the SonarCloud quality gate on PRs | [`docs/AUTHORING/code-quality.md`](docs/AUTHORING/code-quality.md) |
 | Understand cached login & 29-min TTL | [`docs/AUTHORING/auth-storageState.md`](docs/AUTHORING/auth-storageState.md) |
 | Drive the framework with an agent | [`docs/AGENTS.md`](docs/AGENTS.md) |
 

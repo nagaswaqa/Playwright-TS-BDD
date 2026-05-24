@@ -1,0 +1,45 @@
+# SonarCloud quality-gate workflow.
+#
+# Runs on every pull-request open / synchronize against `main` and posts the
+# scan result back as a PR check. A failed Sonar quality gate fails the
+# workflow, which (when branch protection is enabled on `main`) blocks the
+# merge.
+#
+# Configuration touchpoints:
+#   - sonar-project.properties at the repo root carries projectKey, sources,
+#     and exclusions. Quality-gate conditions live in the SonarCloud UI.
+#   - SONAR_TOKEN must exist as a repo secret (Settings → Secrets and
+#     variables → Actions → New repository secret). Generate it on
+#     SonarCloud under My Account → Security.
+
+name: SonarCloud
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  pull-requests: read
+  contents: read
+
+jobs:
+  sonarcloud:
+    name: Quality gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Sonar's PR analysis needs the full history so it can compute the
+          # diff between the PR head and the target branch.
+          fetch-depth: 0
+
+      - name: SonarCloud scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: >
+            -Dsonar.host.url=https://sonarcloud.io
