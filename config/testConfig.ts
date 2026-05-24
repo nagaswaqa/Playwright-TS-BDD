@@ -61,6 +61,14 @@ export const testConfig = {
     // Set HEALING_AUDIT=false to disable the audit logger at runtime
     enableHealingAudit: process.env.HEALING_AUDIT !== 'false',
 
+    // ZAP security proxy
+    // When `ZAP_PROXY=1` (set by `npm run test:security`), all worker
+    // contexts route HTTP traffic through the running ZAP daemon. Default
+    // port matches `scripts/Start-Zap.ps1`.
+    zapProxyEnabled: process.env.ZAP_PROXY === '1' || process.env.ZAP_PROXY === 'true',
+    zapProxyHost: process.env.ZAP_PROXY_HOST || '127.0.0.1',
+    zapProxyPort: process.env.ZAP_PROXY_PORT ? parseInt(process.env.ZAP_PROXY_PORT, 10) : 8090,
+
     // Helpers
     getEnvPath: function () {
         return this.envFile;

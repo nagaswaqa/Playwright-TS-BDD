@@ -30,6 +30,9 @@ npx playwright test
 | `npm run test:dev:noReport` / `test:staging:noReport` | Same as above without opening the report. |
 | `npm run test:recording` | Runs only `@recording`-tagged scenarios. |
 | `npm run test:recording:report` | `test:recording` + open report. |
+| `npm run security:start` | Stage 1 — boot the ZAP daemon (Docker). See [`AUTHORING/security-testing.md`](AUTHORING/security-testing.md). |
+| `npm run security:stop` | Stage 3 — emit the ZAP HTML+JSON reports under `reports/security/` and stop the container. Optional `-FailOn` flag. |
+| `npm run test:security` | One-shot wrapper: start ZAP → run scenarios tagged `@security` → stop ZAP. `-Tag` overrides the filter, `--all` scans everything, `-FailOn` sets the severity gate. |
 | `npm run bddgen` | Regenerate `.features-gen/` from `features/`. |
 | `npm run report` | Open the last HTML report. |
 | `npm run clean` | Wipe `reports/`, `.features-gen/`, logs. |
@@ -50,6 +53,9 @@ Resolved in order: `process.env` → `config/.env.UB.<env>` → defaults in `con
 | `BASE_URL` | empty | Application URL. Falls back to a hard default in `LoginPage` / `AuthCache`. |
 | `HEALING_AUDIT` | `true` | Set to `false` to disable healing audit logs. |
 | `PLAYWRIGHT_TIMEOUT` | `120000` | Per-test timeout in ms. |
+| `ZAP_PROXY` | unset | When `1` / `true`, worker contexts route HTTP traffic through the running ZAP daemon. Set automatically by `npm run test:security`. |
+| `ZAP_PROXY_HOST` | `127.0.0.1` | Where to reach the ZAP daemon. |
+| `ZAP_PROXY_PORT` | `8090` | ZAP daemon port. Match `-Port` on `Start-Zap.ps1` if you change it. |
 
 ## Reports
 

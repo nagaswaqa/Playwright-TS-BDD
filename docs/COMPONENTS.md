@@ -61,6 +61,17 @@
 | ---- | ---- |
 | `global-setup.ts` | Playwright `globalSetup`. Delegates to `AuthCache.ensureFresh()`. |
 
+## Security testing (`scripts/`, `resources/`)
+
+| Component | File | Purpose |
+| --------- | ---- | ------- |
+| `Start-Zap.ps1` | `scripts/Start-Zap.ps1` | Boots OWASP ZAP in Docker as a daemon, persists session metadata to `.zap/session.json`. |
+| `Stop-Zap.ps1` | `scripts/Stop-Zap.ps1` | Generates HTML+JSON reports under `reports/security/`, stops the container, applies the `-FailOn` severity gate. |
+| `Test-WithZap.ps1` | `scripts/Test-WithZap.ps1` | Lifecycle wrapper: start → bddgen → playwright test → stop. Backs `npm run test:security`. |
+| `zap-baseline.conf` | `resources/zap-baseline.conf` | Operator-curated suppression list (one alert id per line + tab-separated rationale). |
+
+See [`docs/AUTHORING/security-testing.md`](AUTHORING/security-testing.md) for the operator workflow. Worker-context proxy wiring lives in `src/core/support/fixtures.ts` and `config/testConfig.ts` (`zapProxyEnabled`, `zapProxyHost`, `zapProxyPort`).
+
 ## Configuration (`config/`)
 
 | File | Role |

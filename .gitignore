@@ -11,3 +11,15 @@ allure-results/
 allure-report/
 logs/
 *.log
+
+# Cached login storageState — grants admin access to the live SIS, do not commit.
+.auth/
+
+# Playwright HTML report + ZAP security reports.
+reports/
+
+# ZAP runtime state (api key, session metadata)
+.zap/
+
+# Throwaway helpers and run logs
+.tmp-*

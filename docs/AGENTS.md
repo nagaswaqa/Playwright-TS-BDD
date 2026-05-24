@@ -14,6 +14,7 @@ Each skill in `.agent/skills/<skill>/SKILL.md` is a thin entry point. Detailed g
 | `self-healing` | Multi-stage healing pipeline and audit. | [`docs/AUTHORING/self-healing.md`](AUTHORING/self-healing.md) |
 | `healing-engine` | Engine internals, locator repository, strategies. | [`docs/AUTHORING/self-healing.md`](AUTHORING/self-healing.md), [`docs/COMPONENTS.md`](COMPONENTS.md) |
 | `api-testing` | `RestApiClient` and hybrid scenarios. | [`docs/AUTHORING/api-testing.md`](AUTHORING/api-testing.md) |
+| `security-testing` | Passive OWASP ZAP scan running alongside the Playwright suite. | [`docs/AUTHORING/security-testing.md`](AUTHORING/security-testing.md) |
 | `recording-workflow` | Three sub-agents (recorder / exporter / automation) — third stage gated on operator approval. | [`docs/AUTHORING/recording-workflow.md`](AUTHORING/recording-workflow.md) |
 | `tc-gen` | Generate BDD scenarios from ADO + dev code + business reqs. | `.agent/workflows/test-automation-agent.md` |
 | `ado-mcp` | Azure DevOps pipeline guidance. | this file (no Pipeline YAML committed yet). |

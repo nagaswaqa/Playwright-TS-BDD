@@ -73,6 +73,7 @@ When you change the framework, update **one** doc:
 | Change a coding rule, naming pattern, or hook contract | this file |
 | Add/change npm scripts or env vars | [`RUNNING.md`](RUNNING.md) |
 | Change recorder, healing, API, or auth workflow | the matching `AUTHORING/*.md` |
+| Change security-testing workflow (ZAP) | [`AUTHORING/security-testing.md`](AUTHORING/security-testing.md) |
 | Add an agent prompt or skill workflow | [`AGENTS.md`](AGENTS.md) |
 
 Skill manifests in `.agent/skills/<skill>/SKILL.md` should remain thin entry points that link to a doc — never restate facts that live in `docs/`.

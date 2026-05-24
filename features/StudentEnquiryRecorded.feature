@@ -1,5 +1,6 @@
 @StudentEnquiry
 @recording
+@security
 Feature: 1 Campus Student Information System
 
   Background:

@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "alexkrechik.cucumberautocomplete",
+        "ms-playwright.playwright"
+    ],
+    // CucumberOpen.cucumber-official does not understand playwright-bdd's
+    // createBdd() re-exported DSL — every step shows as `cucumber.undefined-step`.
+    // Use alexkrechik.cucumberautocomplete instead (regex-based, source-agnostic).
+    "unwantedRecommendations": [
+        "CucumberOpen.cucumber-official"
+    ]
+}

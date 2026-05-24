@@ -31,6 +31,17 @@ export const test = base.extend<MyTestFixtures, MyWorkerFixtures>({
         if (fs.existsSync(STORAGE_STATE_FILE)) {
             opts.storageState = STORAGE_STATE_FILE;
         }
+        if (testConfig.zapProxyEnabled) {
+            // Route every browser request through the local ZAP daemon so its
+            // passive-scan rules can analyse traffic without changing the test.
+            opts.proxy = {
+                server: `http://${testConfig.zapProxyHost}:${testConfig.zapProxyPort}`,
+            };
+            // ZAP issues its own dynamic CA cert; ignore TLS so HTTPS targets
+            // still load. The `Start-Zap.ps1` orchestrator owns telling the
+            // operator how to install the cert if they want green padlocks.
+            opts.ignoreHTTPSErrors = true;
+        }
         const context = await browser.newContext(opts);
         await use(context);
         await context.close();

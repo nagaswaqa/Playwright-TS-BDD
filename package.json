@@ -19,6 +19,9 @@
     "recorder:start": "powershell -ExecutionPolicy Bypass -NoProfile -File scripts/Start-Recorder.ps1",
     "recorder:to-feature": "node scripts/convert-recording-to-feature.js",
     "recorder:generate-pom": "node scripts/generate-pom-and-locators.js",
+    "security:start": "powershell -ExecutionPolicy Bypass -NoProfile -File scripts/Start-Zap.ps1",
+    "security:stop": "powershell -ExecutionPolicy Bypass -NoProfile -File scripts/Stop-Zap.ps1",
+    "test:security": "powershell -ExecutionPolicy Bypass -NoProfile -File scripts/Test-WithZap.ps1",
     "generate-pom": "ts-node POM/generate.ts"
   },
   "keywords": [],
