@@ -1,11 +1,9 @@
 {
-    "cucumberautocomplete.steps": [
-        "src/steps/*.steps.ts",
-        "src/core/support/*.ts"
-    ],
-    "cucumberautocomplete.syncfeatures": "features/*.feature",
-    "cucumberautocomplete.strictGherkinCompletion": true,
-    "cucumberautocomplete.onTypeAutocomplete": true,
-    "cucumberautocomplete.smartSnippets": true,
-    "cucumberautocomplete.stepsInlines": true
+  "cucumber.features": [
+    "features/*.feature"
+  ],
+  "cucumber.glue": [
+    "src/steps/*.ts",
+    "src/steps/*.js"
+  ]
 }

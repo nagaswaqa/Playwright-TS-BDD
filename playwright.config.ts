@@ -1,14 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
-import { testConfig } from './src/config/testConfig';
+import { testConfig } from './config/testConfig';
 
 // Environment variables are now loaded by testConfig import
 const bddDir = defineBddConfig({
     paths: ['features/*.feature'],
     require: [
         'src/core/support/fixtures.ts',
-        'src/steps/demo-healing.steps.ts',
-        'src/steps/mixed.steps.ts',
+        'src/steps/recordedSteps.ts',
+        'src/steps/studentEnquirySteps.ts',
         'src/core/support/hooks.ts'
     ],
 });
@@ -17,6 +17,7 @@ export const BROWSER_NAME = testConfig.browser;
 
 export default defineConfig({
     timeout: process.env.PLAYWRIGHT_TIMEOUT ? parseInt(process.env.PLAYWRIGHT_TIMEOUT) : 120000,
+    globalSetup: require.resolve('./src/setup/global-setup.ts'),
     testDir: '.features-gen',
     testMatch: [
         /.*\.feature\.spec\.(ts|js)/,

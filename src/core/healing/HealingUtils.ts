@@ -2,7 +2,7 @@ import { Page } from '@playwright/test';
 import { HealingEngine } from './HealingEngine';
 import { LocatorRepository } from './LocatorRepository';
 import { AuditLogger } from './AuditLogger';
-import { testConfig } from '../../config/testConfig';
+import { testConfig } from '../../../config/testConfig';
 import { IHealingStrategy } from './strategies/IHealingStrategy';
 
 export let globalHealingEngine: HealingEngine | null = null;
@@ -11,7 +11,7 @@ export let globalHealingEngine: HealingEngine | null = null;
  * Strategy names available for configuration.
  * Use these in `strategyOrder`, `enabledStrategies`, or `disabledStrategies`.
  */
-export type StrategyName = 'DOM' | 'VISUAL' | 'OCR' | 'LLM';
+export type StrategyName = 'CUSTOM_ATTR' | 'DOM' | 'VISUAL' | 'OCR' | 'LLM';
 
 export interface HealerConfig {
     resourcesPath?: string;
@@ -21,7 +21,10 @@ export interface HealerConfig {
     /**
      * Optional ordering of strategies. The engine will instantiate and execute
      * strategies in the order provided. Any names not recognized will be ignored.
-     * Default order: ['DOM', 'VISUAL', 'OCR', 'LLM']
+     * Default order: ['CUSTOM_ATTR', 'OCR', 'DOM', 'VISUAL', 'LLM'].
+     *
+     * Cheapest deterministic checks run first; the remote/expensive LLM call
+     * is the absolute last resort.
      */
     strategyOrder?: StrategyName[];
 
@@ -59,14 +62,15 @@ export async function initializeHealing(config: HealerConfig = {}): Promise<void
 
     // strategy factory map
     const defaultMap: Record<StrategyName, () => IHealingStrategy> = {
+        CUSTOM_ATTR: () => new (require('./strategies/CustomAttributeStrategy')).CustomAttributeStrategy(),
         DOM:    () => new (require('./strategies/DomHealingStrategy')).DomHealingStrategy(),
         VISUAL: () => new (require('./strategies/VisualHealingStrategy')).VisualHealingStrategy(resourcesPath),
         OCR:    () => new (require('./strategies/OcrHealingStrategy')).OcrHealingStrategy(),
         LLM:    () => new (require('./strategies/LlmHealingStrategy')).LlmHealingStrategy()
     };
 
-    // determine base order
-    let order: StrategyName[] = config.strategyOrder || ['DOM', 'VISUAL', 'OCR', 'LLM'];
+    // determine base order — cheapest deterministic first, LLM last.
+    let order: StrategyName[] = config.strategyOrder || ['CUSTOM_ATTR', 'OCR', 'DOM', 'VISUAL', 'LLM'];
 
     // apply profile override if specified
     if (config.profile && config.strategyProfiles && config.strategyProfiles[config.profile]) {

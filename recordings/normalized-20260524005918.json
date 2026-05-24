@@ -1,0 +1,330 @@
+{
+  "metadata": {
+    "source": "live-recorder",
+    "createdAt": "2026-05-23T19:31:40.825Z",
+    "url": "http://145.241.185.96/app",
+    "title": "1 Campus - Student Information System"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > div:nth-of-type(1) > div > button:nth-of-type(1)",
+      "value": "Registry / Back-office",
+      "timestamp": "2026-05-23T19:30:17.583Z",
+      "label": "Registry / Back-office",
+      "element": {
+        "tag": "button",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > button:nth-of-type(1)",
+      "value": "Sign In",
+      "timestamp": "2026-05-23T19:30:19.207Z",
+      "label": "Sign In",
+      "element": {
+        "tag": "button",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > aside.sidebar > nav.sidebar-nav > a.sidebar-link:nth-of-type(6)",
+      "value": "Recruitment",
+      "timestamp": "2026-05-23T19:30:22.986Z",
+      "label": "Recruitment",
+      "element": {
+        "tag": "a",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "",
+        "inSidebar": true
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > aside.sidebar > nav.sidebar-nav > div.sidebar-submenu:nth-of-type(3) > a.sidebar-link.active:nth-of-type(1)",
+      "value": "Enquiries",
+      "timestamp": "2026-05-23T19:30:25.368Z",
+      "label": "Enquiries",
+      "element": {
+        "tag": "a",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "",
+        "inSidebar": true
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > button.btn.btn-secondary.btn-sm",
+      "value": "Filters",
+      "timestamp": "2026-05-23T19:30:28.159Z",
+      "label": "Filters",
+      "element": {
+        "tag": "button",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > select.form-control",
+      "value": "All SourcesWalk-inTelephoneEmailWebsiteRecruitment EventSchool VisitSocial MediaThrough FriendsRoad showCampaigns",
+      "timestamp": "2026-05-23T19:30:34.733Z",
+      "label": "All SourcesWalk-inTelephoneEmailWebsiteRecruitment EventSchool VisitSocial MediaThrough FriendsRoad showCampaigns",
+      "element": {
+        "tag": "select",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "Source",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > select.form-control",
+      "value": "Walk-in",
+      "timestamp": "2026-05-23T19:30:37.007Z",
+      "label": "",
+      "element": {
+        "tag": "select",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "Source",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "change",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > select.form-control",
+      "value": "Walk-in",
+      "timestamp": "2026-05-23T19:30:37.009Z",
+      "label": "",
+      "element": {
+        "tag": "select",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "Source",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > select.form-control",
+      "value": "All SourcesWalk-inTelephoneEmailWebsiteRecruitment EventSchool VisitSocial MediaThrough FriendsRoad showCampaigns",
+      "timestamp": "2026-05-23T19:30:37.015Z",
+      "label": "All SourcesWalk-inTelephoneEmailWebsiteRecruitment EventSchool VisitSocial MediaThrough FriendsRoad showCampaigns",
+      "element": {
+        "tag": "select",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "Source",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.card.mb-lg:nth-of-type(5) > div.data-table-wrapper:nth-of-type(2) > table.data-table > tbody > tr:nth-of-type(4) > td:nth-of-type(10) > button.btn.btn-ghost.btn-sm:nth-of-type(2)",
+      "value": "",
+      "timestamp": "2026-05-23T19:30:49.847Z",
+      "label": "",
+      "element": {
+        "tag": "button",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div.grid-2 > div:nth-of-type(1) > div.form-group:nth-of-type(4) > select.form-control",
+      "value": "Select specific programme...BSc Computer ScienceBEng Electrical EngineeringBSc MathematicsBEng Civil EngineeringMSc ChemistryBSc BiologyBEng Mechanical EngineeringBSc PhysicsBEng Chemical EngineeringBSc GeologyBEng Electronics EngineeringMSc Applied Mathematics",
+      "timestamp": "2026-05-23T19:30:55.194Z",
+      "label": "Select specific programme...BSc Computer ScienceBEng Electrical EngineeringBSc MathematicsBEng Civil EngineeringMSc ChemistryBSc BiologyBEng Mechanical EngineeringBSc PhysicsBEng Chemical EngineeringBSc GeologyBEng Electronics EngineeringMSc Applied Mathematics",
+      "element": {
+        "tag": "select",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "Programme of Interest (optional)",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div.grid-2 > div:nth-of-type(1) > div.form-group:nth-of-type(4) > select.form-control",
+      "value": "BSc Mathematics",
+      "timestamp": "2026-05-23T19:30:58.142Z",
+      "label": "",
+      "element": {
+        "tag": "select",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "Programme of Interest (optional)",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "change",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div.grid-2 > div:nth-of-type(1) > div.form-group:nth-of-type(4) > select.form-control",
+      "value": "BSc Mathematics",
+      "timestamp": "2026-05-23T19:30:58.147Z",
+      "label": "",
+      "element": {
+        "tag": "select",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "Programme of Interest (optional)",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div.grid-2 > div:nth-of-type(1) > div.form-group:nth-of-type(4) > select.form-control",
+      "value": "Select specific programme...BSc Computer ScienceBEng Electrical EngineeringBSc MathematicsBEng Civil EngineeringMSc ChemistryBSc BiologyBEng Mechanical EngineeringBSc PhysicsBEng Chemical EngineeringBSc GeologyBEng Electronics EngineeringMSc Applied Mathematics",
+      "timestamp": "2026-05-23T19:30:58.149Z",
+      "label": "Select specific programme...BSc Computer ScienceBEng Electrical EngineeringBSc MathematicsBEng Civil EngineeringMSc ChemistryBSc BiologyBEng Mechanical EngineeringBSc PhysicsBEng Chemical EngineeringBSc GeologyBEng Electronics EngineeringMSc Applied Mathematics",
+      "element": {
+        "tag": "select",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "Programme of Interest (optional)",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-footer:nth-of-type(3) > button.btn.btn-primary.btn-sm:nth-of-type(2)",
+      "value": "Save Changes",
+      "timestamp": "2026-05-23T19:31:06.871Z",
+      "label": "Save Changes",
+      "element": {
+        "tag": "button",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.card.mb-lg:nth-of-type(5) > div.data-table-wrapper:nth-of-type(2) > table.data-table > tbody > tr:nth-of-type(4)",
+      "value": "ENQ-2026-001525 May 2026Test1 test2test@gmail.com7457455Walk-inBSc MathematicsOpenMpho Tsiane",
+      "timestamp": "2026-05-23T19:31:14.263Z",
+      "label": "ENQ-2026-001525 May 2026Test1 test2test@gmail.com7457455Walk-inBSc MathematicsOpenMpho Tsiane",
+      "element": {
+        "tag": "tr",
+        "role": "",
+        "ariaLabel": "",
+        "placeholder": "",
+        "inputType": "",
+        "name": "",
+        "formLabel": "",
+        "inSidebar": false
+      },
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    }
+  ]
+}

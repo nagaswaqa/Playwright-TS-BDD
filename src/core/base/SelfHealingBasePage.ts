@@ -2,7 +2,7 @@ import { Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
 import { HealingEngine } from '../healing/HealingEngine';
 import { AuditLogger } from '../healing/AuditLogger';
-import { testConfig } from '../../config/testConfig';
+import { testConfig } from '../../../config/testConfig';
 
 export abstract class SelfHealingBasePage extends BasePage {
     protected auditLogger: AuditLogger;

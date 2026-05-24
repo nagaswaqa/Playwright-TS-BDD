@@ -1,6 +1,11 @@
 import { test as base } from 'playwright-bdd';
-import { BrowserContext, Page, Browser } from '@playwright/test';
-import { testConfig } from '../../config/testConfig';
+import { BrowserContext, Page, Browser, BrowserContextOptions } from '@playwright/test';
+import fs from 'fs';
+import path from 'path';
+import { testConfig } from '../../../config/testConfig';
+
+/** Optional storage state captured by global-setup; reused when present. */
+const STORAGE_STATE_FILE = path.resolve(process.cwd(), '.auth', 'user.json');
 
 // Define types for scenario and worker fixtures
 type MyTestFixtures = {
@@ -18,11 +23,15 @@ type MyWorkerFixtures = {
 export const test = base.extend<MyTestFixtures, MyWorkerFixtures>({
     // 1. Define worker-scoped BrowserContext
     workerContext: [async ({ browser }: { browser: Browser }, use: (r: BrowserContext) => Promise<void>) => {
-        const context = await browser.newContext({
+        const opts: BrowserContextOptions = {
             viewport: testConfig.viewport,
             ignoreHTTPSErrors: true,
             locale: 'en-US',
-        });
+        };
+        if (fs.existsSync(STORAGE_STATE_FILE)) {
+            opts.storageState = STORAGE_STATE_FILE;
+        }
+        const context = await browser.newContext(opts);
         await use(context);
         await context.close();
     }, { scope: 'worker' }],

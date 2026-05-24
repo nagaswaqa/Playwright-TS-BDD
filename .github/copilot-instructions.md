@@ -1,46 +1,43 @@
-# GitHub Copilot Instructions for Playwright-TS-BDD Project
+# GitHub Copilot Instructions
 
-You are an expert software engineer specializing in Playwright, TypeScript, and BDD (Behavior Driven Development) using `playwright-bdd`.
+You are an expert software engineer working in a Playwright + TypeScript + BDD (`playwright-bdd`) framework with a self-healing locator engine.
 
-## Project Overview
-This project is a high-performance automated testing framework that combines Playwright's speed with Cucumber's readability, enhanced by a custom **Self-Healing Locator Framework**.
+## Where to look first
 
-## Directory Structure
-- `features/`: Gherkin `.feature` files.
-- `src/steps/`: Step definition files (`.ts`) mapping Gherkin to Playwright. **USER-DEFINED**
-- `src/pages/`: Page Object Model (POM) classes. **USER-DEFINED**
-- `src/core/`: Framework core components
-  - `src/core/base/`: Base page classes (`BasePage.ts`, `SelfHealingBasePage.ts`)
-  - `src/core/support/`: BDD support & hooks (`base-step.ts`, `hooks.ts`, `logger.ts`, `test-context.ts`)
-  - `src/core/api/`: API client utilities (`RestApiClient.ts`)
-  - `src/core/healing/`: Self-Healing Engine (DOM -> Text -> Visual -> OCR):
-    - `LocatorRepository.ts`: Manages `locators.json`.
-    - `HealingEngine.ts`: Hybrid pipeline.
-    - `SelfHealingPage.ts`: Wrapper for Playwright `Page`.
-- `resources/`: Contains `locators.json` and visual template images.
-- `reports/`: Test execution reports and results.
+Before generating or modifying code, consult the canonical docs (each declares what it owns):
 
-## Key Technologies & Patterns
-- **Language**: TypeScript (`ES2020`, `CommonJS`).
-- **Framework**: Playwright + `playwright-bdd`.
-- **Imports**: Use relative imports. Framework modules are located in `src/core/`.
-  - *Correct Path for BasePage*: `import { BasePage } from '../../core/base/BasePage';`
-  - *Correct Path for HealingEngine*: `import { HealingEngine } from '../core/healing/HealingEngine';`
-- **Self-Healing**: Always prefer using healed actions when working in `src/pages/`:
-  - Inherit from `SelfHealingBasePage` (imported from `src/core/base/`).
-  - Use `this.clickHealed(name, selector)` or `this.fillHealed(name, selector, value)`.
-- **BDD Steps**: Use `Given`, `When`, `Then` from `../core/support/base-step`.
-- **Async/Await**: Mandatory for all Playwright actions and healing triggers.
+- [`docs/ARCHITECTURE.md`](../docs/ARCHITECTURE.md) — directory layout and runtime pipeline.
+- [`docs/COMPONENTS.md`](../docs/COMPONENTS.md) — every POM, step file, healing strategy, and core service in the project.
+- [`docs/CONVENTIONS.md`](../docs/CONVENTIONS.md) — coding rules (imports, step signatures, POM patterns, locator naming).
+- [`docs/RUNNING.md`](../docs/RUNNING.md) — npm scripts and environment variables.
+- [`docs/AUTHORING/writing-features.md`](../docs/AUTHORING/writing-features.md) — full feature → POM → step lifecycle.
+- [`docs/AUTHORING/self-healing.md`](../docs/AUTHORING/self-healing.md) — healing pipeline and audit log.
+- [`docs/AUTHORING/auth-storageState.md`](../docs/AUTHORING/auth-storageState.md) — cached login flow.
+- [`docs/AGENTS.md`](../docs/AGENTS.md) — skill registry and agent prompts.
 
-## Coding Standards
-1. **Implicit Typing**: Use TypeScript types for all function parameters and class members.
-2. **Error Handling**: Use `try-catch` blocks in healing logic to allow fallbacks.
-3. **Logging**: Use `AuditLogger` for healing events and `logger` for general test steps.
-4. **Locators**: Store logical names in `resources/locators.json`. Use descriptive names (e.g., `login_button`, `username_field`).
+If a fact is in those docs, do not restate it here — link to it. If a fact is not in those docs and is needed, add it to the appropriate canonical doc and reference it.
 
-## Common Instructions
-- When generating new Page Objects, ensure they extend `SelfHealingBasePage` from `src/core/base/`.
-- When generating Step Definitions, use `testContext` (from `src/core/support/base-step`) for state management between steps.
-- If a locator is likely to be dynamic or brittle, suggest using a self-healing alternative.
-- **Framework vs User-Defined**: Keep framework code (`src/core/`) separate from user-defined code (`src/pages/`, `src/steps/`).
-- **Framework Updates**: Only modify files in `src/core/` if updating the framework itself. User tests should only touch `src/pages/` and `src/steps/`.
+## Hard rules
+
+1. **Step callback signature.** The first argument must be a destructuring pattern (`{}` or `{ page, request, ... }`). `playwright-bdd` parses fixture names from the source. Type `this` as `any`.
+2. **Import surface.** Step files import `Given` / `When` / `Then` / `Before` / `After` / `BeforeAll` / `AfterAll` / `testContext` / `testContextStorage` / `RestApiClient` / `expect` / `logger` / `test` from `../core/support/base-step`. Never import directly from `@cucumber/cucumber` or `@playwright/test`.
+3. **POM base class.** All page objects extend `SelfHealingBasePage` and construct with `super(testContext.page!, globalHealingEngine!)`. Use the `*Healed` helpers (`clickHealed`, `fillHealed`, `selectOptionHealed`, …) instead of raw Playwright calls.
+4. **Locators.** Logical names live in `resources/locators.json`, keyed by namespaced slugs (e.g., `field.dropdown.admission_type`). Each entry needs `name` and `selector`; add a `description` to enable OCR healing.
+5. **Hooks.** Don't add `Before` / `After` from user code. The framework's `Before` runs the auth freshness gate — bypassing it breaks long suites.
+6. **Singleton-Page-per-worker.** Don't create extra browser contexts in tests. The `fixtures.ts` worker-scoped fixtures already handle that.
+7. **Documentation responsibility.** When you add or change a Page Object, step file, healing strategy, npm script, env var, or agent prompt, update the canonical doc that owns it (table at the bottom of `docs/CONVENTIONS.md`). Do not duplicate facts across files.
+
+## When the user asks you to add code
+
+- New POM → create under `src/pages/`, register in [`docs/COMPONENTS.md`](../docs/COMPONENTS.md).
+- New step file → create under `src/steps/`, add to the `require` array in `playwright.config.ts`, register in [`docs/COMPONENTS.md`](../docs/COMPONENTS.md).
+- New healing strategy → implement `IHealingStrategy`, register in `HealingUtils.ts` and in [`docs/AUTHORING/self-healing.md`](../docs/AUTHORING/self-healing.md) + [`docs/COMPONENTS.md`](../docs/COMPONENTS.md).
+- New npm script or env var → update [`docs/RUNNING.md`](../docs/RUNNING.md).
+
+## Coding standards
+
+- TypeScript with explicit types on parameters, members, and return values.
+- Async/await for every Playwright and healing call.
+- Wrap healing-dependent code in `try/catch` so primary failures fall through to recovery.
+- Use `logger` for trace, `AuditLogger` is owned by the healing engine — don't write to it from user code.
+- Framework code lives under `src/core/`. Modify it only when the change is genuinely framework-level.

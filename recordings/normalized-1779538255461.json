@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "source": "recordings/raw-recording-1779538150926.json",
+    "createdAt": "2026-05-23T12:10:55.462Z",
+    "url": "http://145.241.185.96/app",
+    "title": "1 Campus - Student Information System"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > div:nth-of-type(1) > div > button:nth-of-type(1)",
+      "value": "⚙️AdministratorRegistry / Back-office",
+      "timestamp": "2026-05-23T12:06:34.290Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > div:nth-of-type(1) > div > button:nth-of-type(3)",
+      "value": "🎓",
+      "timestamp": "2026-05-23T12:06:36.668Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > button:nth-of-type(1)",
+      "value": "Sign In",
+      "timestamp": "2026-05-23T12:06:39.315Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > aside > nav > button:nth-of-type(3)",
+      "value": "My Registration",
+      "timestamp": "2026-05-23T12:06:53.449Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > aside > nav > button:nth-of-type(10)",
+      "value": "Accommodation",
+      "timestamp": "2026-05-23T12:07:09.933Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > div > header > button",
+      "value": "Sign Out",
+      "timestamp": "2026-05-23T12:07:18.693Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > div:nth-of-type(1) > div > button:nth-of-type(1)",
+      "value": "Administrator",
+      "timestamp": "2026-05-23T12:07:22.002Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > button:nth-of-type(1)",
+      "value": "Sign In",
+      "timestamp": "2026-05-23T12:07:26.945Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > aside.sidebar > nav.sidebar-nav > a.sidebar-link:nth-of-type(6)",
+      "value": "Recruitment",
+      "timestamp": "2026-05-23T12:07:32.294Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > aside.sidebar > nav.sidebar-nav > div.sidebar-submenu:nth-of-type(3) > a.sidebar-link.active:nth-of-type(1)",
+      "value": "Enquiries",
+      "timestamp": "2026-05-23T12:07:34.456Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > div > input.form-control",
+      "value": "",
+      "timestamp": "2026-05-23T12:07:46.177Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > div > input.form-control",
+      "value": "T",
+      "timestamp": "2026-05-23T12:07:47.513Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > div > input.form-control",
+      "value": "Te",
+      "timestamp": "2026-05-23T12:07:47.868Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > div > input.form-control",
+      "value": "Tes",
+      "timestamp": "2026-05-23T12:07:48.135Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > div > input.form-control",
+      "value": "Test",
+      "timestamp": "2026-05-23T12:07:48.509Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > div > input.form-control",
+      "value": "Test1",
+      "timestamp": "2026-05-23T12:07:52.702Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "change",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > div > input.form-control",
+      "value": "Test1",
+      "timestamp": "2026-05-23T12:08:03.661Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.card.mb-lg:nth-of-type(5) > div.data-table-wrapper:nth-of-type(2) > table.data-table > tbody > tr > td:nth-of-type(10) > button.btn.btn-ghost.btn-sm:nth-of-type(1)",
+      "value": "",
+      "timestamp": "2026-05-23T12:08:03.664Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "",
+      "timestamp": "2026-05-23T12:08:12.771Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T17:38",
+      "timestamp": "2026-05-23T12:08:16.760Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T18:38",
+      "timestamp": "2026-05-23T12:08:20.227Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T18:39",
+      "timestamp": "2026-05-23T12:08:21.973Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T06:39",
+      "timestamp": "2026-05-23T12:08:23.668Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "",
+      "timestamp": "2026-05-23T12:08:29.616Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T17:38",
+      "timestamp": "2026-05-23T12:08:31.780Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T18:38",
+      "timestamp": "2026-05-23T12:08:33.213Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T18:39",
+      "timestamp": "2026-05-23T12:08:34.197Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T06:39",
+      "timestamp": "2026-05-23T12:08:35.313Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-body:nth-of-type(2) > div:nth-of-type(5) > div.grid-2:nth-of-type(2) > div:nth-of-type(2) > input.form-control",
+      "value": "2026-05-25T06:39",
+      "timestamp": "2026-05-23T12:08:45.141Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div.modal-overlay:nth-of-type(6) > div.modal > div.modal-header:nth-of-type(1) > div:nth-of-type(2) > button.btn.btn-ghost.btn-sm",
+      "value": "",
+      "timestamp": "2026-05-23T12:08:51.365Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    }
+  ]
+}

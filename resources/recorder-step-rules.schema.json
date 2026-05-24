@@ -1,0 +1,182 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Recorder Step Rules",
+    "description": "Operator-maintained mapping from recorded actions to existing Gherkin steps. Consumed by scripts/convert-recording-to-feature.js.",
+    "type": "object",
+    "required": [
+        "rules"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "preconditions": {
+            "type": "array",
+            "description": "Ordered list of Background-line candidates. The first match decides the Given step the generator emits in the Background block.",
+            "items": {
+                "$ref": "#/definitions/preconditionRule"
+            }
+        },
+        "rules": {
+            "type": "array",
+            "description": "Ordered list of action -> step rules. The generator iterates rules in declaration order and uses the first match.",
+            "items": {
+                "$ref": "#/definitions/rule"
+            }
+        }
+    },
+    "definitions": {
+        "preconditionRule": {
+            "type": "object",
+            "required": [
+                "when",
+                "step"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "when": {
+                    "$ref": "#/definitions/preconditionWhen"
+                },
+                "step": {
+                    "type": "string"
+                }
+            }
+        },
+        "preconditionWhen": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "urlEquals": {
+                    "type": "string"
+                },
+                "urlMatches": {
+                    "type": "string",
+                    "description": "Regex tested against the recording metadata.url."
+                },
+                "titleMatches": {
+                    "type": "string",
+                    "description": "Regex tested against the recording metadata.title."
+                }
+            }
+        },
+        "rule": {
+            "type": "object",
+            "required": [
+                "when"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Human-readable label used in the generator's match log."
+                },
+                "when": {
+                    "$ref": "#/definitions/actionWhen"
+                },
+                "step": {
+                    "type": "string",
+                    "description": "Gherkin step template (omitted when skip:true)."
+                },
+                "skip": {
+                    "type": "boolean",
+                    "description": "When true, the matched action is recognised noise and does not produce a Gherkin step."
+                }
+            }
+        },
+        "actionWhen": {
+            "type": "object",
+            "description": "Predicates are AND-combined. Provide only the ones you need.",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "enum": [
+                                "click",
+                                "input",
+                                "change"
+                            ]
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "click",
+                                    "input",
+                                    "change"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "tag": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    ]
+                },
+                "role": {
+                    "type": "string"
+                },
+                "inSidebar": {
+                    "type": "boolean"
+                },
+                "inputType": {
+                    "type": "string"
+                },
+                "inputTypeIn": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "selectorContains": {
+                    "type": "string"
+                },
+                "selectorMatches": {
+                    "type": "string",
+                    "description": "Regex tested against the action selector."
+                },
+                "valueEquals": {
+                    "type": "string"
+                },
+                "valueContains": {
+                    "type": "string"
+                },
+                "valueMatches": {
+                    "type": "string",
+                    "description": "Regex tested against the action value."
+                },
+                "formLabelDefined": {
+                    "type": "boolean",
+                    "description": "True when element.formLabel is non-empty."
+                },
+                "formLabelEquals": {
+                    "type": "string"
+                },
+                "formLabelMatches": {
+                    "type": "string"
+                },
+                "ariaLabelDefined": {
+                    "type": "boolean"
+                },
+                "ariaLabelEquals": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

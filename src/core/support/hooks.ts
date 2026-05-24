@@ -4,8 +4,9 @@ import fs from 'fs';
 import path from 'path';
 import * as dotenv from 'dotenv';
 import { initializeHealing } from '../healing/HealingUtils';
+import * as AuthCache from '../auth/AuthCache';
 
-import { testConfig } from '../../config/testConfig';
+import { testConfig } from '../../../config/testConfig';
 
 let globalConfig: Record<string, string> = {};
 
@@ -22,22 +23,12 @@ BeforeAll(async ({ browser }: { browser: Browser }) => {
 
     // ── 2. Load environment variables from .env file (once per worker) ──────
     if (Object.keys(globalConfig).length === 0) {
-        const ENV = testConfig.env;
-        let envFile = `.env.${ENV}`;
-
-        if (!fs.existsSync(path.resolve(process.cwd(), envFile))) {
-            const altEnvFile = `.env_${ENV}`;
-            if (fs.existsSync(path.resolve(process.cwd(), altEnvFile))) {
-                envFile = altEnvFile;
-            }
-        }
-
-        const envPath = path.resolve(process.cwd(), envFile);
+        const envPath = testConfig.envFile;
         if (fs.existsSync(envPath)) {
-            logger.info(`>> [ENV] Loading variables from: ${envFile}`);
+            logger.info(`>> [ENV] Loading variables from: ${path.basename(envPath)}`);
             globalConfig = dotenv.parse(fs.readFileSync(envPath));
         } else {
-            logger.warn(`>> [ENV] No env file found for environment: ${ENV}`);
+            logger.warn(`>> [ENV] No env file found at: ${envPath}`);
         }
     }
 
@@ -58,6 +49,20 @@ AfterAll(async () => {
 // We use traditional functions to have access to 'this' (the World instance)
 Before(async function (this: any, { page, context, request, $testInfo }: any) {
     logger.info(`>> [SCENARIO] Starting: ${$testInfo.title}`);
+
+    // ── Auth freshness gate ─────────────────────────────────────────────────
+    // Server session expires at 30 min. We refresh at 29 (TTL configured in
+    // AuthCache) and re-apply the new state to the live worker context so
+    // long-running suites don't fall off the auth cliff mid-run.
+    try {
+        const refreshed = await AuthCache.ensureFresh();
+        if (refreshed) {
+            logger.info('>> [AUTH] storageState refreshed, re-applying to worker context');
+            await AuthCache.applyToContext(context, page);
+        }
+    } catch (err) {
+        logger.warn(`>> [AUTH] Freshness check failed: ${(err as Error).message}`);
+    }
 
     // In playwright-bdd, 'this' is the world instance
     const world = this;

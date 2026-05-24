@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "source": "recordings/raw-recording-1779529876808.json",
+    "createdAt": "2026-05-23T09:53:26.910Z",
+    "url": "http://145.241.185.96/app",
+    "title": "1 Campus - Student Information System"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > div:nth-of-type(1) > div > button:nth-of-type(1)",
+      "value": "Administrator",
+      "timestamp": "2026-05-23T09:49:56.519Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div > div:nth-of-type(2) > form > button:nth-of-type(1)",
+      "value": "Sign In",
+      "timestamp": "2026-05-23T09:49:59.210Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > aside.sidebar > nav.sidebar-nav > a.sidebar-link:nth-of-type(6)",
+      "value": "Recruitment",
+      "timestamp": "2026-05-23T09:50:04.213Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > aside.sidebar > nav.sidebar-nav > div.sidebar-submenu:nth-of-type(3) > a.sidebar-link.active:nth-of-type(1)",
+      "value": "Enquiries",
+      "timestamp": "2026-05-23T09:50:07.239Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "",
+      "value": "1 Campus - Student Information System(function () {\r\n    if (window.__PLAYWRIGHT_RECORDER__) {\r\n        console.warn('Recorder already injected.');\r\n        return;\r\n    }\r\n\r\n    window.__PLAYWRIGHT_RECORDER__ = true;\r\n    window.__RECORDER_ACTIONS__ = [];\r\n\r\n    function getElementPath(el) {\r\n        if (!el) return '';\r\n        const path = [];\r\n        while (el && el.nodeType === Node.ELEMENT_NODE && el.tagName !== 'HTML') {\r\n            let selector = el.tagName.toLowerCase();\r\n            if (el.id) {\r\n                selector += `#${el.id}`;\r\n                path.unshift(selector);\r\n                break;\r\n            }\r\n            const cls = Array.from(el.classList || []).filter(Boolean);\r\n            if (cls.length) {\r\n                selector += `.${cls.join('.')}`;\r\n            }\r\n            const parent = el.parentNode;\r\n            if (parent) {\r\n                const siblings = Array.from(parent.children).filter((child) => child.tagName === el.tagName);\r\n                if (siblings.length > 1) {\r\n                    const index = siblings.indexOf(el) + 1;\r\n                    selector += `:nth-of-type(${index})`;\r\n                }\r\n            }\r\n            path.unshift(selector);\r\n            el = el.parentElement;\r\n        }\r\n        return path.join(' > ');\r\n    }\r\n\r\n    function recordAction(action) {\r\n        window.__RECORDER_ACTIONS__.push({\r\n            timestamp: new Date().toISOString(),\r\n            ...action,\r\n        });\r\n        console.debug('[Recorder] action recorded:', action);\r\n    }\r\n\r\n    document.addEventListener('click', function (event) {\r\n        const target = event.target;\r\n        if (!target || !target.closest) return;\r\n        const selector = getElementPath(target.closest('button, a, input, textarea, select, label, [role]')) || getElementPath(target);\r\n        recordAction({\r\n            type: 'click',\r\n            selector,\r\n            label: target.textContent && target.textContent.trim(),\r\n        });\r\n    }, true);\r\n\r\n    document.addEventListener('input', function (event) {\r\n        const target = event.target;\r\n        if (!target || !('value' in target)) return;\r\n        const selector = getElementPath(target);\r\n        recordAction({\r\n            type: 'input',\r\n            selector,\r\n            value: target.value,\r\n        });\r\n    }, true);\r\n\r\n    document.addEventListener('change', function (event) {\r\n        const target = event.target;\r\n        if (!target || !('value' in target)) return;\r\n        const selector = getElementPath(target);\r\n        recordAction({\r\n            type: 'change',\r\n            selector,\r\n            value: target.value,\r\n        });\r\n    }, true);\r\n\r\n    window.__RECORDER_EXPORT__ = function () {\r\n        return JSON.stringify({\r\n            metadata: {\r\n                url: window.location.href,\r\n                title: document.title,\r\n                exportedAt: new Date().toISOString(),\r\n            },\r\n            actions: window.__RECORDER_ACTIONS__,\r\n        }, null, 2);\r\n    };\r\n\r\n    console.log('[Recorder] Injected successfully. Call window.__RECORDER_EXPORT__() to get the recorded actions.');\r\n})();\r\nYou need to enable JavaScript to run this app.1 CampusDashboardStudent TrackAcademic SetupAcademic ModelTimetablingRoom BookingStudent LifecycleRecruitment12EnquiriesAssignment RulesEventsCampaignsSchool VisitsAnalyticsApplicationSelection & AdmissionRegistrationAdd / DropChange of ProgrammeWithdrawal / SuspensionAssessmentAssessment & GradesExam EligibilityExclusionTranscriptionAcademic AdvisementGraduationFinance & FacilitiesStudent FeesAccommodationResearch CycleSettingsGlobal Admin1 Campus © 2026University of BotswanaGAGlobal AdministratorAdminStudent EnquiriesManage and track prospective student enquiries for intake 2026/27 i1,247Total Enquiries+18.3% from last intake342Open27.4% of total786Responded63.0% response rate119Converted to Application9.5% conversion rateExport+ New EnquiryShow archivedFiltersStatusAll StatusesOpenIn ProgressRespondedConvertedClosedArchivedSourceAll SourcesWalk-inTelephoneEmailWebsiteRecruitment EventSchool VisitSocial MediaThrough FriendsRoad showCampaignsDate FromDate ToArea of InterestAll ProgrammesBSc Computer ScienceBEng Electrical EngineeringBSc MathematicsBEng Civil EngineeringMSc ChemistryBSc BiologyBEng Mechanical EngineeringBSc PhysicsBEng Chemical EngineeringBSc GeologyBEng Electronics EngineeringMSc Applied MathematicsClear AllApply FiltersEnquiry DirectoryShowing 5 of 5 entriesRef#DateProspect NameEmailPhoneSourceArea of InterestStatusAssigned ToActionsENQ-2026-000318 Jan 2026Naledi Ramokokan.ramokoka@hotmail.com+267 74 456 789Walk-inBSc MathematicsConvertedMpho TsianeENQ-2026-000801 Feb 2026Onalenna Modiseo.modise@gmail.com+267 73 901 234WebsiteBSc PhysicsClosedMpho TsianeENQ-2026-001318 May 2026OCI Testoci.test@example.com+267 71 111 222Walk-inOpenMpho TsianeENQ-2026-001401 Jan 2026Kancharla Chandra mouliKancharla.chandramouli8639@gmail.com8639247503Walk-inBSc Computer ScienceOpenMpho TsianeENQ-2026-001525 May 2026Test1 test2test@gmail.com7457455Walk-inBSc PhysicsOpenMpho Tsiane1 CampusStudent Information System© 2026 UST GlobalCustomer Support|Terms of Use|Privacy Policy|Help",
+      "timestamp": "2026-05-23T09:50:26.995Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(3) > div:nth-of-type(2) > button.btn.btn-secondary.btn-sm",
+      "value": "Filters",
+      "timestamp": "2026-05-23T09:50:37.247Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > select.form-control",
+      "value": "All SourcesWalk-inTelephoneEmailWebsiteRecruitment EventSchool VisitSocial MediaThrough FriendsRoad showCampaigns",
+      "timestamp": "2026-05-23T09:50:47.381Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "input",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > select.form-control",
+      "value": "Walk-in",
+      "timestamp": "2026-05-23T09:50:49.401Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "change",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > select.form-control",
+      "value": "Walk-in",
+      "timestamp": "2026-05-23T09:50:49.403Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > select.form-control",
+      "value": "All SourcesWalk-inTelephoneEmailWebsiteRecruitment EventSchool VisitSocial MediaThrough FriendsRoad showCampaigns",
+      "timestamp": "2026-05-23T09:50:49.410Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    },
+    {
+      "type": "click",
+      "selector": "div#root > div.app-layout > div.main-content > main.page-content > div:nth-of-type(4) > div:nth-of-type(2) > button.btn.btn-primary.btn-sm:nth-of-type(2)",
+      "value": "Apply Filters",
+      "timestamp": "2026-05-23T09:50:53.019Z",
+      "metadata": {
+        "page": "1 Campus - Student Information System"
+      }
+    }
+  ]
+}

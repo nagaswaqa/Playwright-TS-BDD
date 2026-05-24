@@ -1,20 +1,57 @@
 {
-    "demoLogin": {
-        "name": "demoLogin",
-        "selector": "text=demoLogin",
-        "description": "Login button on demo page",
-        "ocrText": "demoLogin",
-        "lastHealed": "2026-03-05T06:24:01.473Z",
-        "confidence": 0.7
+    "sidebar.section.student_management": {
+        "name": "Sidebar: Student Management",
+        "selector": "nav.sidebar-nav a:has-text(\"Student Management\")",
+        "description": "Sidebar navigation link that opens the Student Management section."
     },
-    "wikiSearchInput": {
-        "name": "wikiSearchInput",
-        "selector": "input[name=\"search\"]",
-        "description": "Wikipedia Search Input"
+    "modal.trigger.student_details": {
+        "name": "Modal Trigger: Student Details",
+        "selector": "button:has-text(\"Student Details\")",
+        "description": "Button that opens the Student Details modal."
     },
-    "wikiSearchButton": {
-        "name": "wikiSearchButton",
-        "selector": "button[type=\"submit\"]",
-        "description": "Wikipedia Search Button"
+    "field.dropdown.admission_type": {
+        "name": "Dropdown: Admission Type",
+        "selector": "label:has-text(\"Admission Type\") ~ select",
+        "description": "Admission Type dropdown inside the Student Details modal."
+    },
+    "field.dropdown.program_type": {
+        "name": "Dropdown: Program Type",
+        "selector": "label:has-text(\"Program Type\") ~ select",
+        "description": "Program Type dropdown inside the Student Details modal."
+    },
+    "field.dropdown.level": {
+        "name": "Dropdown: Level",
+        "selector": "label:has-text(\"Level\") ~ select",
+        "description": "Level dropdown (e.g., Undergraduate / Postgraduate) inside the Student Details modal."
+    },
+    "field.dropdown.major": {
+        "name": "Dropdown: Major",
+        "selector": "label:has-text(\"Major\") ~ select",
+        "description": "Major / programme dropdown inside the Student Details modal."
+    },
+    "field.dropdown.location": {
+        "name": "Dropdown: Location",
+        "selector": "label:has-text(\"Location\") ~ select",
+        "description": "Location / campus dropdown inside the Student Details modal."
+    },
+    "field.datepicker.enrollment_date": {
+        "name": "Datepicker: Enrollment Date",
+        "selector": "label:has-text(\"Enrollment Date\") ~ input[type=\"date\"]",
+        "description": "Enrollment Date input inside the Student Details modal."
+    },
+    "enquiries.button.filters": {
+        "name": "Enquiries: Filters Button",
+        "selector": "button:has-text(\"Filters\")",
+        "description": "Toggle that reveals the Source / Programme filter dropdowns above the Enquiries table."
+    },
+    "enquiries.row.edit": {
+        "name": "Enquiries: Edit Row",
+        "selector": "table.data-table tbody tr td:last-child button.btn-ghost:nth-of-type(2)",
+        "description": "Edit (pencil) icon in the action column of an Enquiries-table row. Combine with row text to disambiguate."
+    },
+    "modal.button.save_changes": {
+        "name": "Modal: Save Changes",
+        "selector": "div.modal-footer button.btn-primary:has-text(\"Save Changes\")",
+        "description": "Primary action button in any modal footer that confirms the form."
     }
 }

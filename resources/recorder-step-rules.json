@@ -1,0 +1,118 @@
+{
+    "$schema": "./recorder-step-rules.schema.json",
+    "preconditions": [
+        {
+            "name": "Default precondition (cached login)",
+            "when": {
+                "urlMatches": ".*"
+            },
+            "step": "Given the application is open"
+        }
+    ],
+    "rules": [
+        {
+            "name": "Skip: pre-login Registry / Back-office click",
+            "when": {
+                "type": "click",
+                "tag": "button",
+                "valueEquals": "Registry / Back-office"
+            },
+            "skip": true
+        },
+        {
+            "name": "Skip: pre-login Sign In click",
+            "when": {
+                "type": "click",
+                "tag": "button",
+                "valueEquals": "Sign In"
+            },
+            "skip": true
+        },
+        {
+            "name": "Skip: <select> open / close click (recorder noise)",
+            "when": {
+                "type": "click",
+                "tag": "select"
+            },
+            "skip": true
+        },
+        {
+            "name": "Skip: button click with empty visible text (recorder noise)",
+            "when": {
+                "type": "click",
+                "tag": "button",
+                "valueEquals": ""
+            },
+            "skip": true
+        },
+        {
+            "name": "Sidebar navigation by visible text",
+            "when": {
+                "type": "click",
+                "inSidebar": true
+            },
+            "step": "When I navigate to the \"{value}\" section"
+        },
+        {
+            "name": "Open named modal",
+            "when": {
+                "type": "click",
+                "tag": "button",
+                "valueMatches": "^(Student Details|Registration|Enrolment|Enrollment)$"
+            },
+            "step": "When I open the \"{value}\" modal"
+        },
+        {
+            "name": "Open filters panel",
+            "when": {
+                "type": "click",
+                "tag": "button",
+                "valueEquals": "Filters"
+            },
+            "step": "When I open the filters panel"
+        },
+        {
+            "name": "Save changes (modal footer)",
+            "when": {
+                "type": "click",
+                "tag": "button",
+                "valueEquals": "Save Changes"
+            },
+            "step": "When I save the changes"
+        },
+        {
+            "name": "Edit row from data table",
+            "when": {
+                "type": "click",
+                "tag": "tr"
+            },
+            "step": "When I edit the enquiry row matching \"{value}\""
+        },
+        {
+            "name": "Select from labelled dropdown",
+            "when": {
+                "type": "change",
+                "tag": "select",
+                "formLabelDefined": true
+            },
+            "step": "When I select \"{value}\" from the \"{formLabel}\" dropdown"
+        },
+        {
+            "name": "Pick a date in a labelled datepicker",
+            "when": {
+                "type": "input",
+                "tag": "input",
+                "inputTypeIn": [
+                    "date",
+                    "datetime-local",
+                    "datetime",
+                    "time",
+                    "month",
+                    "week"
+                ],
+                "formLabelDefined": true
+            },
+            "step": "When I select \"{value}\" from the \"{formLabel}\" datepicker"
+        }
+    ]
+}

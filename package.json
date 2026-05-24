@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test:env": "node scripts/run-env.js",
     "test": "node scripts/run-tests-with-report.js",
     "test:noReport": "npx bddgen && npx playwright test",
     "test:report": "npx bddgen && npx playwright test && node scripts/open-report.js",
@@ -10,9 +11,14 @@
     "test:dev:noReport": "set ENV=dev && npx bddgen && npx playwright test",
     "test:staging": "set ENV=staging && node scripts/run-tests-with-report.js",
     "test:staging:noReport": "set ENV=staging && npx bddgen && npx playwright test",
+    "test:recording": "npx bddgen && npx playwright test --grep @recording",
+    "test:recording:report": "npx bddgen && npx playwright test --grep @recording && node scripts/open-report.js",
     "bddgen": "npx bddgen",
     "report": "node scripts/open-report.js",
     "clean": "npx rimraf reports .features-gen logs error.log",
+    "recorder:start": "powershell -ExecutionPolicy Bypass -NoProfile -File scripts/Start-Recorder.ps1",
+    "recorder:to-feature": "node scripts/convert-recording-to-feature.js",
+    "recorder:generate-pom": "node scripts/generate-pom-and-locators.js",
     "generate-pom": "ts-node POM/generate.ts"
   },
   "keywords": [],
@@ -22,6 +28,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^12.5.0",
     "@playwright/test": "^1.57.0",
+    "cucumber": "^6.0.7",
     "dotenv": "^17.2.3",
     "jimp": "^1.6.0",
     "opencv-wasm": "^4.3.0-10",
